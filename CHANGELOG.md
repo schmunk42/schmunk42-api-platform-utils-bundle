@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the dmstr API Platform Utils Bundle will be documented in this file.
+All notable changes to the schmunk42 API Platform Utils Bundle will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-11-22
 
 ### Added
-- Initial release of dmstr/api-platform-utils-bundle
+- Initial release of schmunk42/api-platform-utils-bundle
 - **UuidResolver** service for finding entities by full or partial UUID
   - Supports both binary UUID storage (Symfony Uid) and string UUID storage (GUID)
   - Intelligent partial matching with ambiguity detection
@@ -32,16 +32,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Human-readable operation titles
   - expects/returns schema information
   - Makes API self-documenting and discoverable
-- Configuration system with dmstr_api_platform_utils.yaml
+- Configuration system with schmunk42_api_platform_utils.yaml
 - Bundle auto-configuration via DependencyInjection extension
 - Comprehensive documentation with usage examples
 
 ### Extracted from ZA7
 The following components were extracted and refactored from the ZA7 project:
-- `App\Service\UuidResolver` → `Dmstr\ApiPlatformUtils\Service\UuidResolver`
-- `App\Service\CredentialEncryption` → `Dmstr\ApiPlatformUtils\Service\CredentialEncryption`
-- `App\OpenApi\RelationFieldSchemaDecorator` → `Dmstr\ApiPlatformUtils\OpenApi\RelationFieldSchemaDecorator`
-- `App\EventSubscriber\AddHydraOperationsSubscriber` → `Dmstr\ApiPlatformUtils\EventSubscriber\AddHydraOperationsSubscriber`
+- `App\Service\UuidResolver` → `Schmunk42\ApiPlatformUtils\Service\UuidResolver`
+- `App\Service\CredentialEncryption` → `Schmunk42\ApiPlatformUtils\Service\CredentialEncryption`
+- `App\OpenApi\RelationFieldSchemaDecorator` → `Schmunk42\ApiPlatformUtils\OpenApi\RelationFieldSchemaDecorator`
+- `App\EventSubscriber\AddHydraOperationsSubscriber` → `Schmunk42\ApiPlatformUtils\EventSubscriber\AddHydraOperationsSubscriber`
 
 ### Changed
 - RelationFieldSchemaDecorator: Made API prefix configurable (was hardcoded to '/api')

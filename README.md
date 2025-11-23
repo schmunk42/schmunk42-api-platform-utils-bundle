@@ -1,4 +1,4 @@
-# dmstr API Platform Utils Bundle
+# schmunk42 API Platform Utils Bundle
 
 Generic utilities for API Platform projects: UUID resolver, credential encryption, OpenAPI enhancements, and Hydra operations.
 
@@ -19,7 +19,7 @@ Since this is an internal bundle in the `extensions/` directory, add autoloading
 {
     "autoload": {
         "psr-4": {
-            "Dmstr\\ApiPlatformUtils\\": "extensions/api-platform-utils-bundle/src/"
+            "Schmunk42\\ApiPlatformUtils\\": "extensions/api-platform-utils-bundle/src/"
         }
     }
 }
@@ -38,16 +38,16 @@ Add to `config/bundles.php`:
 ```php
 return [
     // ...
-    Dmstr\ApiPlatformUtils\DmstrApiPlatformUtilsBundle::class => ['all' => true],
+    Schmunk42\ApiPlatformUtils\Schmunk42ApiPlatformUtilsBundle::class => ['all' => true],
 ];
 ```
 
 ### 3. Configure
 
-Create `config/packages/dmstr_api_platform_utils.yaml`:
+Create `config/packages/schmunk42_api_platform_utils.yaml`:
 
 ```yaml
-dmstr_api_platform_utils:
+schmunk42_api_platform_utils:
     # Credential Encryption (required)
     credential_encryption:
         key: '%env(base64:CREDENTIALS_ENCRYPTION_KEY)%'
@@ -84,7 +84,7 @@ CREDENTIALS_ENCRYPTION_KEY="base64-encoded-32-byte-key-here"
 Find entities by full or partial UUID:
 
 ```php
-use Dmstr\ApiPlatformUtils\Service\UuidResolver;
+use Schmunk42\ApiPlatformUtils\Service\UuidResolver;
 
 class MyCommand extends Command
 {
@@ -129,7 +129,7 @@ class MyCommand extends Command
 Securely encrypt/decrypt API credentials:
 
 ```php
-use Dmstr\ApiPlatformUtils\Service\CredentialEncryption;
+use Schmunk42\ApiPlatformUtils\Service\CredentialEncryption;
 
 class MyService
 {
@@ -163,7 +163,7 @@ class MyService
 **Generate Encryption Key**:
 
 ```php
-use Dmstr\ApiPlatformUtils\Service\CredentialEncryption;
+use Schmunk42\ApiPlatformUtils\Service\CredentialEncryption;
 
 // Generate a new base64-encoded 32-byte key
 $key = CredentialEncryption::generateKey();
@@ -283,7 +283,7 @@ Automatically adds operation metadata to JSON-LD item responses. **No code requi
 ## Configuration Reference
 
 ```yaml
-dmstr_api_platform_utils:
+schmunk42_api_platform_utils:
     credential_encryption:
         enabled: true                    # Enable/disable credential encryption service
         key: '%env(base64:CREDENTIALS_ENCRYPTION_KEY)%'  # Required: 32-byte base64-encoded key
@@ -319,10 +319,10 @@ dmstr_api_platform_utils:
 ```
 api-platform-utils-bundle/
 ├── src/
-│   ├── DmstrApiPlatformUtilsBundle.php      # Main bundle class
+│   ├── Schmunk42ApiPlatformUtilsBundle.php      # Main bundle class
 │   ├── DependencyInjection/
 │   │   ├── Configuration.php                 # Configuration tree
-│   │   └── DmstrApiPlatformUtilsExtension.php  # DI extension
+│   │   └── Schmunk42ApiPlatformUtilsExtension.php  # DI extension
 │   ├── Service/
 │   │   ├── UuidResolver.php                  # UUID resolver service
 │   │   └── CredentialEncryption.php          # Encryption service
